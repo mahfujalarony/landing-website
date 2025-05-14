@@ -1,13 +1,10 @@
-# Responsive Website with Tailwind CSS
+# Responsive landing page with Html, JavaScript and Tailwind CSS
 
-This is a fully responsive website designed using **Tailwind CSS**. The project demonstrates modern web design principles, focusing on responsiveness, accessibility, and performance.
+### I have created a landing page using HTML, CSS, and Tailwind CSS. It doesn't include much functionality—it's primarily focused on the UI design. I’ve deployed it on Vercel. You can check it out using the live link below.
 
 ---
 
-## 🌐 Live Preview
-
-Check out the live version of this project here:  
-[Live Preview on Vercel](https://tailwind-pm2v2rorw-mahfuj-alam-ronys-projects.vercel.app)
+##  Live Preview : [Live Preview on Vercel](https://tailwind-pm2v2rorw-mahfuj-alam-ronys-projects.vercel.app)
 
 ---
 
@@ -17,7 +14,7 @@ Check out the live version of this project here:
 
 ---
 
-## 🚀 Features
+##  Features
 
 - Fully responsive design across all devices (mobile, tablet, and desktop).
 - Clean and modern UI.
@@ -26,15 +23,16 @@ Check out the live version of this project here:
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - **HTML**
+- **JavaScript**
 - **Tailwind CSS**
 - **Vercel** (for deployment)
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```plaintext
 .
