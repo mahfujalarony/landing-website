@@ -11,28 +11,48 @@
 </head>
 <body>
   <div class="px-3">
-    <nav class="mt-6 flex mx-4 justify-between md:justify-around gap-5 items-center text-center ">
-      <img src="./assets/Logo.png" alt="logo" class="w-32 relative md:top-[-12px]">
-      <ul class="md:flex md:flex-wrap  gap-5 hidden" id="menu">
+    <nav class="mt-6 flex mx-4 justify-between md:justify-around gap-5 items-center text-center">
+      <img src="./assets/Logo.png" alt="logo" class="w-32 cursor-pointer relative md:top-[-12px]">
+      <ul class="md:flex md:flex-wrap gap-5 hidden" id="menu">
         <li><a href="#" class="hover:bg-slate-200 transition duration-500 hover:text-black/70 text-black px-3 py-2 rounded-md">About</a></li>
-        <li><a href="#" class="hover:bg-slate-200 transition duration-500 hover:text-black/70 text-black px-3 py-2 rounded-md">Servicess</a></li>
+        <li><a href="#" class="hover:bg-slate-200 transition duration-500 hover:text-black/70 text-black px-3 py-2 rounded-md">Services</a></li>
         <li><a href="#" class="text-nowrap hover:bg-slate-200 transition duration-500 hover:text-black/70 text-black px-3 py-2 rounded-md">Use cases</a></li>
         <li><a href="#" class="hover:bg-slate-200 transition duration-500 hover:text-black/70 text-black px-3 py-2 rounded-md">Pricing</a></li>
-        <li><a href="#" class="hover:bg-slate-200 transition duration-500 hover:text-black/70 text-black px-3 py-2 rounded-md">Bolg</a></li>
-        <button class="text-nowrap border border-solid px-4 py-2 rounded-lg border-3 relative top-[-10px] hover:bg-slate-200 hover:text-black/70">Request a quite</button>
+        <li><a href="#" class="hover:bg-slate-200 transition duration-500 hover:text-black/70 text-black px-3 py-2 rounded-md">Blog</a></li>
+        <button class="text-nowrap border border-solid px-4 py-2 rounded-lg border-3 relative top-[-10px] hover:bg-slate-200 hover:text-black/70">Request a quote</button>
       </ul>
-      <img src="./assets/menu.png" alt="menu" class="block md:hidden">
+      <button id="mobile-menu-toggle" class="block md:hidden focus:outline-none">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
     </nav>
 
-    <div class="hero mt-10 flex ">
+    <!-- Sidebar for mobile -->
+    <div id="mobile-sidebar" style="position: fixed; top: 0; left: -100%; width: 75%; max-width: 300px; height: 100%; background-color: #fff; box-shadow: 2px 0 5px rgba(0,0,0,0.3); transition: left 0.3s ease-in-out; z-index: 1000; overflow-y: auto;">
+      <div style="padding: 20px; border-bottom: 1px solid #e5e7eb;">
+        <button id="close-sidebar" style="font-size: 1.5rem; background: none; border: none; cursor: pointer;">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <ul style="list-style: none; padding: 20px; margin: 0;">
+        <li style="margin-bottom: 15px;"><a href="#" style="text-decoration: none; color: #000; font-size: 1.1rem; display: block; padding: 10px; border-radius: 8px; transition: background-color 0.3s;">About</a></li>
+        <li style="margin-bottom: 15px;"><a href="#" style="text-decoration: none; color: #000; font-size: 1.1rem; display: block; padding: 10px; border-radius: 8px; transition: background-color 0.3s;">Services</a></li>
+        <li style="margin-bottom: 15px;"><a href="#" style="text-decoration: none; color: #000; font-size: 1.1rem; display: block; padding: 10px; border-radius: 8px; transition: background-color 0.3s;">Use cases</a></li>
+        <li style="margin-bottom: 15px;"><a href="#" style="text-decoration: none; color: #000; font-size: 1.1rem; display: block; padding: 10px; border-radius: 8px; transition: background-color 0.3s;">Pricing</a></li>
+        <li style="margin-bottom: 15px;"><a href="#" style="text-decoration: none; color: #000; font-size: 1.1rem; display: block; padding: 10px; border-radius: 8px; transition: background-color 0.3s;">Blog</a></li>
+        <li><button style="width: 100%; padding: 10px; background-color: #000; color: #fff; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; transition: background-color 0.3s;">Request a quote</button></li>
+      </ul>
+    </div>
+    <!-- Overlay for sidebar -->
+    <div id="sidebar-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); opacity: 0; pointer-events: none; transition: opacity 0.3s ease-in-out; z-index: 999;"></div>
+
+    <div class="hero mt-10 flex">
       <div class="left w-full md:w-1/2 m-0 md:m-10">
-        <h1 class="text-2xl md:text-4xl font-semibold" >Navigating the <br class="hidden md:block"> digital landscape <br class="hidden md:block"> for success</h1>
-        <img  src="./assets/Illustration.png" alt="hero" class="size-auto p-16 md:hidden">
+        <h1 class="text-2xl md:text-4xl font-semibold">Navigating the <br class="hidden md:block"> digital landscape <br class="hidden md:block"> for success</h1>
+        <img src="./assets/Illustration.png" alt="hero" class="size-auto p-16 md:hidden">
         <p class="mt-6">Our digital marketing agency helps businesses grow and succeed online through a range of services including SEO, PPC, social media marketing, and content creation.</p>
         <button class="mt-6 w-full px-12 py-4 bg-black/85 hover:bg-black/80 border border-black rounded-xl text-[#f8e8e8]">Book a consultation</button>
       </div>
-
-      <div class="hidden md:block right w-0 md:w-1/2 m-0 md:m-10 ">
+      <div class="hidden md:block right w-0 md:w-1/2 m-0 md:m-10">
         <img src="./assets/Illustration.png" alt="hero" class="size-96">
       </div>
     </div>
@@ -48,86 +68,65 @@
   </div>
 
   <div class="flex text-center md:text-start flex-col md:flex-row mt-12 md:justify-evenly px-10 align-middle">
-    <h1 class="text-xl md:2xl font-medium ">Services</h1>
+    <h1 class="text-xl md:2xl font-medium">Services</h1>
     <p class="md:ml-10 font-light mt-4 md:mt-auto">At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:</p>
   </div>
 
-
-
-  <div class=" flex flex-wrap justify-center items-center p-5">
-    <div  class="w-full md:w-full mx-auto md:mx-16 lg:w-1/3 h-auto m-6 p-10  border-b-8 border-solid border-2 border-black rounded-lg bg-[#f3f3f3] flex">
-      <div class="left ">
-        <h1 class="text-2xl font-medium">Pay-per-click
-          advertising
-        </h1>
-        <a href="#" class="flex mt-6"><img src="./assets/services/Icon.png" class="w-7"  alt="ocon"> <p class="ml-3">Learn more</p></a>
+  <div class="flex flex-wrap justify-center items-center p-5">
+    <div class="w-full md:w-full mx-auto md:mx-16 lg:w-1/3 h-auto m-6 p-10 border-b-8 border-solid border-2 border-black rounded-lg bg-[#f3f3f3] flex">
+      <div class="left">
+        <h1 class="text-2xl font-medium">Pay-per-click advertising</h1>
+        <a href="#" class="flex mt-6"><img src="./assets/services/Icon.png" class="w-7" alt="icon"> <p class="ml-3">Learn more</p></a>
       </div>
       <div class="right">
         <img src="./assets/services/Illustration (2).png" alt="">
       </div>
     </div>
 
-    <div  class="w-full md:w-full mx-auto md:mx-16 lg:w-1/3 h-auto m-6 p-10  border-b-8 border-solid border-2 border-black rounded-lg bg-[#b9ff66] flex">
-      <div class="left ">
-        <h1 class="text-2xl font-medium">Social Media
-          Marketing
-        </h1>
-        <a href="#" class="flex mt-6"><img src="./assets/services/Icon.png" class="w-7"  alt="ocon"> <p class="ml-3">Learn more</p></a>
+    <div class="w-full md:w-full mx-auto md:mx-16 lg:w-1/3 h-auto m-6 p-10 border-b-8 border-solid border-2 border-black rounded-lg bg-[#b9ff66] flex">
+      <div class="left">
+        <h1 class="text-2xl font-medium">Social Media Marketing</h1>
+        <a href="#" class="flex mt-6"><img src="./assets/services/Icon.png" class="w-7" alt="icon"> <p class="ml-3">Learn more</p></a>
       </div>
       <div class="right">
         <img src="./assets/services/Illustration (1).png" alt="">
       </div>
     </div>
 
-
-    <div  class="w-full md:w-full mx-auto md:mx-16 lg:w-1/3 h-auto m-6 p-10  border-b-8 border-solid border-2 text-white border-black rounded-lg bg-[#191a23] flex">
-      <div class="left ">
-        <h1 class="text-2xl font-medium">Email
-          Marketing
-        </h1>
-        <a href="#" class="flex mt-6"><img src="./assets/services/Icon.png" class="w-7"  alt="ocon"> <p class="ml-3">Learn more</p></a>
+    <div class="w-full md:w-full mx-auto md:mx-16 lg:w-1/3 h-auto m-6 p-10 border-b-8 border-solid border-2 text-white border-black rounded-lg bg-[#191a23] flex">
+      <div class="left">
+        <h1 class="text-2xl font-medium">Email Marketing</h1>
+        <a href="#" class="flex mt-6"><img src="./assets/services/Icon.png" class="w-7" alt="icon"> <p class="ml-3">Learn more</p></a>
       </div>
       <div class="right">
         <img src="./assets/services/Illustration.png" alt="">
       </div>
     </div>
 
-
-
-    <div  class="w-full md:w-full mx-auto md:mx-16 lg:w-1/3 h-auto m-6 p-10  border-b-8 border-solid border-2 border-black rounded-lg bg-[#f3f3f3] flex">
-      <div class="left ">
-        <h1 class="text-2xl font-medium">Content
-          Creation
-        </h1>
-        <a href="#" class="flex mt-6"><img src="./assets/services/Icon.png" class="w-7"  alt="ocon"> <p class="ml-3">Learn more</p></a>
+    <div class="w-full md:w-full mx-auto md:mx-16 lg:w-1/3 h-auto m-6 p-10 border-b-8 border-solid border-2 border-black rounded-lg bg-[#f3f3f3] flex">
+      <div class="left">
+        <h1 class="text-2xl font-medium">Content Creation</h1>
+        <a href="#" class="flex mt-6"><img src="./assets/services/Icon.png" class="w-7" alt="icon"> <p class="ml-3">Learn more</p></a>
       </div>
       <div class="right">
         <img src="./assets/services/tokyo-magnifier-web-search-with-elements 2.png" alt="">
       </div>
     </div>
 
-
-
-    <div  class="w-full md:w-full mx-auto md:mx-16 lg:w-1/3 h-auto m-6 p-10  border-b-8 border-solid border-2 border-black rounded-lg bg-[#b9ff66] flex">
-      <div class="left ">
-        <h1 class="text-2xl font-medium">Analytics and 
-          Tracking
-        </h1>
-        <a href="#" class="flex mt-6"><img src="./assets/services/Icon.png" class="w-7"  alt="ocon"> <p class="ml-3">Learn more</p></a>
+    <div class="w-full md:w-full mx-auto md:mx-16 lg:w-1/3 h-auto m-6 p-10 border-b-8 border-solid border-2 border-black rounded-lg bg-[#b9ff66] flex">
+      <div class="left">
+        <h1 class="text-2xl font-medium">Analytics and Tracking</h1>
+        <a href="#" class="flex mt-6"><img src="./assets/services/Icon.png" class="w-7" alt="icon"> <p class="ml-3">Learn more</p></a>
       </div>
       <div class="right">
         <img src="./assets/services/tokyo-many-browser-windows-with-different-information 1.png" alt="">
       </div>
     </div>
 
-
-
-    <div  class="w-full md:w-full mx-auto md:mx-16 lg:w-1/3 h-auto m-6 p-10  border-b-8 border-solid border-2 border-black text-white rounded-lg bg-[#191a23] flex">
-      <div class="left ">
-        <h1 class="text-2xl font-medium">Search engine
-          optimization
-        </h1>
-        <a href="#" class="flex mt-6"><img src="./assets/services/Icon.png" class="w-7"  alt="ocon"> <p class="ml-3">Learn more</p></a>
+    <div class="w-full md:w-full mx-auto md:mx-16 lg:w-1/3 h-auto m-6 p-10 border-b-8 border-solid border-2 border-black text-white rounded-lg bg-[#191a23] flex">
+      <div class="left">
+        <h1 class="text-2xl font-medium">Search engine optimization</h1>
+        <a href="#" class="flex mt-6"><img src="./assets/services/Icon.png" class="w-7" alt="icon"> <p class="ml-3">Learn more</p></a>
       </div>
       <div class="right">
         <img src="./assets/services/tokyo-sending-messages-from-one-place-to-another 1.png" alt="">
@@ -135,318 +134,326 @@
     </div>
   </div>
 
-
-
   <div class="flex justify-center items-center bg-[#f3f3f3] rounded-lg mx-6 mt-10 md:mx-20 p-6 gap-6">
     <div class="left w-full md:w-1/2 lg:w-1/3">
       <h1 class="text-2xl md:text-3xl font-medium mt-10">Let’s make things happen</h1>
       <p class="font-light mt-6">Contact us today to learn more about how our digital marketing services can help your business grow and succeed online.</p>
       <button class="w-full rounded-lg md:w-auto px-6 py-3 bg-black/90 hover:bg-black/75 text-white mt-6">Get your free proposal</button>
     </div>
-
     <div class="right w-full md:w-1/2 lg:w-1/3 hidden md:block size-auto">
       <img src="./assets/Illustration-2.png" alt="">
     </div>
   </div>
 
   <div class="flex text-center md:text-start flex-col md:flex-row mt-12 md:justify-evenly px-10 align-middle">
-    <h1 class="text-xl md:2xl font-medium ">Case Studies</h1>
+    <h1 class="text-xl md:2xl font-medium">Case Studies</h1>
     <p class="md:ml-10 font-light mt-4 md:mt-auto">Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies</p>
   </div>
 
-
-  <div class="flex sm:flex-row overflow-x-scroll md:w-auto gap-5 lg:gap-0  lg:divide-x lg:divide-white justify-between lg:bg-[#191a23] lg:border lg:rounded-lg font-light lg:mx-20 lg:px-5 lg:py-6 mt-8 text-white">
-  
+  <div class="flex sm:flex-row overflow-x-scroll md:w-auto gap-5 lg:gap-0 lg:divide-x lg:divide-white justify-between lg:bg-[#191a23] lg:border lg:rounded-lg font-light lg:mx-20 lg:px-5 lg:py-6 mt-8 text-white">
     <div class="left w-full sm:w-full md:w-1/3 lg:w-1/4 h-auto bg-[#191a23] flex-shrink-0 border lg:border-none rounded-lg m-3 px-5 py-3">
       <p class="mt-5">For a local restaurant, we implemented a targeted PPC campaign that resulted in a 50% increase in website traffic and a 25% increase in sales.</p>
       <a href="#" class="flex items-center text-[#9cf03d] mt-5">Learn more <img src="./assets/services/Icon.png" class="size-8" alt=""></a>
     </div>
-
-    <div class="hidden lg:block w-[1px]  bg-white"></div>
-
+    <div class="hidden lg:block w-[1px] bg-white"></div>
     <div class="left w-full sm:w-full md:w-1/3 lg:w-1/4 h-auto bg-[#191a23] flex-shrink-0 border lg:border-none rounded-lg m-3 px-5 py-3">
       <p class="mt-5">For a B2B software company, we developed an SEO strategy that resulted in a first page ranking for key keywords and a 200% increase in organic traffic.</p>
       <a href="#" class="mt-5 flex items-center text-[#9cf03d]">Learn more <img src="./assets/services/Icon.png" class="size-8" alt=""></a>
     </div>
-
     <div class="hidden lg:block w-[1px] bg-white"></div>
-  
     <div class="left w-full sm:w-full md:w-1/3 lg:w-1/4 h-auto bg-[#191a23] flex-shrink-0 border lg:border-none rounded-lg m-3 px-5 py-3">
       <p class="mt-5">For a national retail chain, we created a social media marketing campaign that increased followers by 25% and generated a 20% increase in online sales.</p>
       <a href="#" class="mt-5 flex items-center text-[#9cf03d]">Learn more <img src="./assets/services/Icon.png" class="size-8" alt=""></a>
     </div>
-    
   </div>
 
-
-  <div class="flex  text-center md:text-start flex-col md:flex-row mt-12 md:justify-evenly px-10 align-middle">
-    <h1 class="text-xl md:2xl font-medium ">Our Working Process </h1>
+  <div class="flex text-center md:text-start flex-col md:flex-row mt-12 md:justify-evenly px-10 align-middle">
+    <h1 class="text-xl md:2xl font-medium">Our Working Process</h1>
     <p class="md:ml-10 font-light mt-4 md:mt-auto">Step-by-Step Guide to Achieving Your Business Goals</p>
   </div>
 
+  <div class="flex flex-col mt-12 mx-6 md:mx-10 lg:mx-16 xl:mx-20 lg:mt-16">
+    <button class="accordion border-2 border-black px-10 py-6 text-left text-xl font-bold rounded-lg bg-[#b9ff66]" data-target="panel-1">01 Consultation</button>
+    <div id="panel-1" class="panel border-2 border-t-0 px-5 border-black py-2 text-left" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-in-out;">
+      <p class="px-5 py-10">During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.</p>
+    </div>
 
-  <div class="flex flex-col  mt-12 mx-6 md:mx-10 lg:mx-16 xl:mx-20 lg:mt-16">
+    <button class="accordion border-2 mt-5 border-black px-5 py-6 text-left text-xl font-bold rounded-lg bg-[#b9ff66]" data-target="panel-2">02 Research and Strategy Development</button>
+    <div id="panel-2" class="panel border-2 border-t-0 px-5 border-black py-2 text-left" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-in-out;">
+      <p class="px-5 py-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi doloremque ducimus consequatur nam expedita ipsum natus necessitatibus provident perferendis ut. Repudiandae, dignissimos voluptate. Libero, provident. Eligendi, ducimus cumque. Porro, assumenda!</p>
+    </div>
 
-      <button class="active: according border-2 border-black px-10 py-6 text-left text-xl font-bold rounded-lg bg-[#b9ff66]">01 Consultation</button>
-      <div class="panel hidden border-2 border-t-0 px-5 border-black py-2 text-left ">
-        <p class="px-5 py-10">During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.</p>
-      </div>
+    <button class="accordion border-2 mt-5 border-black px-5 py-6 text-left text-xl font-bold rounded-lg bg-[#b9ff66]" data-target="panel-3">03 Implementation</button>
+    <div id="panel-3" class="panel border-2 px-5 border-t-0 border-black py-2 text-left" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-in-out;">
+      <p class="px-5 py-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi doloremque ducimus consequatur nam expedita ipsum natus necessitatibus provident perferendis ut. Repudiandae, dignissimos voluptate. Libero, provident. Eligendi, ducimus cumque. Porro, assumenda!</p>
+    </div>
 
-      <button class="according border-2 mt-5 border-black px-5 py-6 text-left text-xl font-bold rounded-lg bg-[#b9ff66]">02 Research and Strategy Development</button>
-      <div class="panel hidden border-2 border-t-0 px-5 border-black py-2 text-left ">
-        <p class="px-5 py-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi doloremque ducimus consequatur nam expedita ipsum natus necessitatibus provident perferendis ut. Repudiandae, dignissimos voluptate. Libero, provident. Eligendi, ducimus cumque. Porro, assumenda!</p>
-      </div>
+    <button class="accordion border-2 mt-5 border-black px-5 py-6 text-left text-xl font-bold rounded-lg bg-[#b9ff66]" data-target="panel-4">04 Monitoring and Optimization</button>
+    <div id="panel-4" class="panel border-2 px-5 border-t-0 border-black py-2 text-left" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-in-out;">
+      <p class="px-5 py-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi doloremque ducimus consequatur nam expedita ipsum natus necessitatibus provident perferendis ut. Repudiandae, dignissimos voluptate. Libero, provident. Eligendi, ducimus cumque. Porro, assumenda!</p>
+    </div>
 
+    <button class="accordion border-2 border-black mt-5 px-5 py-6 text-left text-xl font-bold rounded-lg bg-[#b9ff66]" data-target="panel-5">05 Reporting and Communication</button>
+    <div id="panel-5" class="panel border-2 px-5 border-black border-t-0 py-2 text-left" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-in-out;">
+      <p class="px-5 py-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi doloremque ducimus consequatur nam expedita ipsum natus necessitatibus provident perferendis ut. Repudiandae, dignissimos voluptate. Libero, provident. Eligendi, ducimus cumque. Porro, assumenda!</p>
+    </div>
 
-      
-      <button class="according border-2 mt-5 border-black px-5 py-6 text-left text-xl font-bold rounded-lg bg-[#b9ff66]">03 Implementation</button>
-      <div class="panel hidden border-2 px-5 border-t-0 border-black py-2 text-left ">
-        <p class="px-5 py-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi doloremque ducimus consequatur nam expedita ipsum natus necessitatibus provident perferendis ut. Repudiandae, dignissimos voluptate. Libero, provident. Eligendi, ducimus cumque. Porro, assumenda!</p>
-      </div>
-
-
-      
-      <button class="according border-2 mt-5 border-black px-5 py-6 text-left text-xl font-bold rounded-lg bg-[#b9ff66]">04 Monitoring and Optimization</button>
-      <div class="panel hidden border-2 px-5 border-t-0 border-black py-2 text-left ">
-        <p class="px-5 py-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi doloremque ducimus consequatur nam expedita ipsum natus necessitatibus provident perferendis ut. Repudiandae, dignissimos voluptate. Libero, provident. Eligendi, ducimus cumque. Porro, assumenda!</p>
-      </div>
-
-
-      
-      <button class="according border-2 border-black mt-5 px-5 py-6 text-left text-xl font-bold rounded-lg bg-[#b9ff66]">05 Reporting and Communication</button>
-      <div class="panel hidden border-2 px-5 border-black border-t-0 py-2 text-left ">
-        <p class="px-5 py-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi doloremque ducimus consequatur nam expedita ipsum natus necessitatibus provident perferendis ut. Repudiandae, dignissimos voluptate. Libero, provident. Eligendi, ducimus cumque. Porro, assumenda!</p>
-      </div>
-
-      <button class="according border-2 mt-5 border-black px-5 py-6 text-left text-xl font-bold rounded-lg bg-[#b9ff66]">06 Continual Improvement</button>
-      <div class="panel hidden border-2 px-5 border-t-0 border-black py-2 text-left ">
-        <p class="px-5 py-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi doloremque ducimus consequatur nam expedita ipsum natus necessitatibus provident perferendis ut. Repudiandae, dignissimos voluptate. Libero, provident. Eligendi, ducimus cumque. Porro, assumenda!</p>
-      </div>
-
-
-
+    <button class="accordion border-2 mt-5 border-black px-5 py-6 text-left text-xl font-bold rounded-lg bg-[#b9ff66]" data-target="panel-6">06 Continual Improvement</button>
+    <div id="panel-6" class="panel border-2 px-5 border-t-0 border-black py-2 text-left" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-in-out;">
+      <p class="px-5 py-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi doloremque ducimus consequatur nam expedita ipsum natus necessitatibus provident perferendis ut. Repudiandae, dignissimos voluptate. Libero, provident. Eligendi, ducimus cumque. Porro, assumenda!</p>
+    </div>
   </div>
-  
 
   <div class="flex text-center md:text-start flex-col md:flex-row mt-12 md:justify-evenly px-10 align-middle">
-    <h1 class="text-xl md:2xl font-medium ">Team</h1>
+    <h1 class="text-xl md:2xl font-medium">Team</h1>
     <p class="md:ml-10 font-light mt-4 md:mt-auto">Meet the skilled and experienced team behind our successful digital marketing strategies</p>
   </div>
-  
 
   <div class="mt-16 flex flex-wrap mx-6 md:mx-16 lg:mx-0 gap-10 lg:gap-3 xl:gap-10 justify-center">
- 
-    <div class="lg:w-1/4   border-2 border-b-8 border-black rounded-3xl  p-8">
+    <div class="lg:w-1/4 border-2 border-b-8 border-black rounded-3xl p-8">
       <div class="flex justify-end">
-        <img class="w-8 h-8"src="./assets/Teams/Social icon.png" alt="">
+        <img class="w-8 h-8" src="./assets/Teams/Social icon.png" alt="">
       </div>
       <div class="flex items-center gap-4">
         <img src="./assets/Teams/Mask group (1).png" alt="">
-        <div> 
-        <h1 class="text-xl md:text-2xl">John Smith</h1>
-        <span>CEO and Founder</span>
+        <div>
+          <h1 class="text-xl md:text-2xl">John Smith</h1>
+          <span>CEO and Founder</span>
         </div>
       </div>
       <div class="h-[1px] my-5 w-auto bg-black"></div>
       <p class="font-light">10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy</p>
     </div>
 
-
-    <div class="lg:w-1/4  border-2 border-b-8 border-black rounded-3xl  p-8">
+    <div class="lg:w-1/4 border-2 border-b-8 border-black rounded-3xl p-8">
       <div class="flex justify-end">
-        <img class="w-8 h-8"src="./assets/Teams/Social icon.png" alt="">
+        <img class="w-8 h-8" src="./assets/Teams/Social icon.png" alt="">
       </div>
       <div class="flex items-center gap-4">
         <img src="./assets/Teams/Mask group.png" alt="">
-        <div> 
-        <h1 class="text-xl md:text-2xl">John Doe</h1>
-        <span>Director of Operations</span>
+        <div>
+          <h1 class="text-xl md:text-2xl">John Doe</h1>
+          <span>Director of Operations</span>
         </div>
       </div>
       <div class="h-[1px] my-5 w-auto bg-black"></div>
       <p class="font-light">7+ years of experience in project management and team leadership. Strong organizational and communication skills</p>
     </div>
 
-
-    <div class="lg:w-1/4   border-2 border-b-8 border-black rounded-3xl  p-8">
+    <div class="lg:w-1/4 border-2 border-b-8 border-black rounded-3xl p-8">
       <div class="flex justify-end">
-        <img class="w-8 h-8"src="./assets/Teams/Social icon.png" alt="">
+        <img class="w-8 h-8" src="./assets/Teams/Social icon.png" alt="">
       </div>
       <div class="flex items-center gap-4">
         <img src="./assets/Teams/Picture (1).png" alt="">
-        <div> 
-        <h1 class="text-xl md:text-2xl">Michael Brown</h1>
-        <span>Senior SEO Specialist</span>
+        <div>
+          <h1 class="text-xl md:text-2xl">Michael Brown</h1>
+          <span>Senior SEO Specialist</span>
         </div>
       </div>
       <div class="h-[1px] my-5 w-auto bg-black"></div>
       <p class="font-light">5+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization</p>
     </div>
 
-
-    <div class="lg:w-1/4 border-2 border-b-8 border-black  rounded-3xl  p-8">
+    <div class="lg:w-1/4 border-2 border-b-8 border-black rounded-3xl p-8">
       <div class="flex justify-end">
-        <img class="w-8 h-8"src="./assets/Teams/Social icon.png" alt="">
+        <img class="w-8 h-8" src="./assets/Teams/Social icon.png" alt="">
       </div>
       <div class="flex items-center gap-4">
         <img src="./assets/Teams/Picture (2).png" alt="">
-        <div> 
-        <h1 class="text-xl md:text-2xl">Emily Johnson</h1>
-        <span>PPC Manager</span>
+        <div>
+          <h1 class="text-xl md:text-2xl">Emily Johnson</h1>
+          <span>PPC Manager</span>
         </div>
       </div>
       <div class="h-[1px] my-5 w-auto bg-black"></div>
       <p class="font-light">3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis</p>
     </div>
 
-
-
-    <div class="lg:w-1/4 border-2 border-b-8 border-black  rounded-3xl  p-8">
+    <div class="lg:w-1/4 border-2 border-b-8 border-black rounded-3xl p-8">
       <div class="flex justify-end">
-        <img class="w-8 h-8"src="./assets/Teams/Social icon.png" alt="">
+        <img class="w-8 h-8" src="./assets/Teams/Social icon.png" alt="">
       </div>
       <div class="flex items-center gap-4">
         <img src="./assets/Teams/Picture (3).png" alt="">
-        <div> 
-        <h1 class="text-xl md:text-2xl">Brian Williams</h1>
-        <span>Social Media Specialist</span>
+        <div>
+          <h1 class="text-xl md:text-2xl">Brian Williams</h1>
+          <span>Social Media Specialist</span>
         </div>
       </div>
       <div class="h-[1px] my-5 w-auto bg-black"></div>
       <p class="font-light">4+ years of experience in social media marketing. Proficient in creating and scheduling content, analyzing metrics, and building engagement</p>
     </div>
 
-
-
-    <div class="lg:w-1/4 border-2 border-b-8 border-black rounded-3xl  p-8">
-      <div class="flex justify-end">
-        <img class="w-8 h-8"src="./assets/Teams/Social icon.png" alt="">
-      </div>
-      <div class="flex items-center gap-4">
-        <img src="./assets/Teams/Picture.png" alt="">
-        <div> 
+  <div class="lg:w-1/4 border-2 border-b-8 border-black rounded-3xl p-8">
+    <div class="flex justify-end">
+      <img class="w-8 h-8" src="./assets/Teams/Social icon.png" alt="Social icon">
+    </div>
+    <div class="flex items-center gap-4">
+      <img src="./assets/Teams/Picture.png" alt="Sarah Kim">
+      <div>
         <h1 class="text-xl md:text-2xl">Sarah Kim</h1>
         <span>Content Creator</span>
-        </div>
       </div>
-      <div class="h-[1px] my-5 w-auto bg-black"></div>
-      <p class="font-light">2+ years of experience in writing and editing
-        Skilled in creating compelling, SEO-optimized content for various industries</p>
     </div>
+    <div class="h-[1px] my-5 w-auto bg-black"></div>
+    <p class="font-light">
+      2+ years of experience in writing and editing. Skilled in creating compelling, SEO-optimized content for various industries.
+    </p>
+  </div>
+</div>
     <div class="w-full relative">
-      <button class="absolute right-0 lg:right-32 xl:right-28 px-16 py-3 bg-black rounded-xl text-white">See all team</button>
+      <button class="absolute mt-5 right-0 lg:right-32 xl:right-28 px-16 py-3 bg-black rounded-xl text-white hover:bg-gray-800 transition duration-300">
+  See all team
+</button>
+
     </div>
   </div>
 
-
-
-
-
   <div class="flex text-center md:text-start flex-col md:flex-row mt-20 md:justify-evenly px-10 align-middle">
-    <h1 class="text-xl md:2xl font-medium ">Contact Us</h1>
+    <h1 class="text-xl md:2xl font-medium">Contact Us</h1>
     <p class="md:ml-10 font-light mt-4 md:mt-auto">Connect with Us: Let's Discuss Your Digital Marketing Needs</p>
   </div>
 
-  <div class="bg-[#f3f3f3]  relative px-0 lg:px-20  mt-16 py-6 border rounded-xl mx-2 md:mx-10 lg:mx-20 ">
+  <div class="bg-[#f3f3f3] relative px-0 lg:px-20 mt-16 py-6 border rounded-xl mx-2 md:mx-10 lg:mx-20">
     <div class="flex justify-around md:justify-start gap-4">
-      <!-- Option 1 -->
       <div class="flex gap-4 md:px-14 lg:px-0 mt-5">
-        <!-- Option 1 -->
         <label class="flex items-center gap-3">
           <input type="radio" name="options" class="peer hidden" />
-          <div
-            class="w-4 h-4 rounded-full border border-black peer-checked:bg-[#b9ff66]"
-          ></div>
-          <span class="">Say Hi</span>
+          <div class="w-4 h-4 rounded-full border border-black peer-checked:bg-[#b9ff66]"></div>
+          <span>Say Hi</span>
         </label>
-      
-        <!-- Option 2 -->
         <label class="flex items-center gap-3">
           <input type="radio" name="options" class="peer hidden" />
-          <div
-            class="w-4 h-4 rounded-full border border-black  peer-checked:bg-[#b9ff66]"
-          ></div>
-          <span class="">Get a Quote</span>
+          <div class="w-4 h-4 rounded-full border border-black peer-checked:bg-[#b9ff66]"></div>
+          <span>Get a Quote</span>
         </label>
       </div>
-     </div>
+    </div>
 
-     <form action="" class="flex flex-col px-4 md:px-14 lg:px-0 mt-5">
+    <form action="" class="flex flex-col px-4 md:px-14 lg:px-0 mt-5">
       <label>
-        Name: <br> <input type="text" placeholder="Name" class="mt-3 px-6 w-full lg:w-96 py-2  bg-[#fff] border rounded-lg">
+        Name: <br> <input type="text" placeholder="Name" class="mt-3 px-6 w-full lg:w-96 py-2 bg-[#fff] border rounded-lg">
       </label> <br>
-
       <label>
-        Email: <br> <input type="email" placeholder="Email" class="mt-3 px-6 w-full lg:w-96 py-2  bg-[#fff] border rounded-lg">
+        Email: <br> <input type="email" placeholder="Email" class="mt-3 px-6 w-full lg:w-96 py-2 bg-[#fff] border rounded-lg">
       </label> <br>
-
       <label>
-        Meassge: <br> <textarea name="Meassge" id="" placeholder="Message.." class="px-5 py-2 w-full lg:w-96 min-h-32 rounded-lg"></textarea>
+        Message: <br> <textarea name="Message" placeholder="Message.." class="px-5 py-2 w-full lg:w-96 min-h-32 rounded-lg"></textarea>
       </label>
-     </form>
+    </form>
 
-     <div class="absolute right-[-200px] top-9 hidden lg:block">
-      <img src="./assets/Illustration-3.png" class="size-96"  alt="">
-      </div>
-
-      <button class="px-10 hidden md:block md:ml-14 lg:ml-0 py-2 bg-black rounded-lg mt-6 text-white">Send Message</button>
+    <div class="absolute right-[-200px] top-9 hidden lg:block">
+      <img src="./assets/Illustration-3.png" class="size-96" alt="">
     </div>
 
+    <button class="px-10 hidden md:block md:ml-14 lg:ml-0 py-2 bg-black rounded-lg mt-6 text-white">Send Message</button>
+  </div>
 
-    <div class="mt-10 mx-2 md:mx-10 block md:hidden">
-      <button class="px-10 py-3 w-full bg-black text-white border rounded-lg ">Send Message</button>
-    </div>
+  <div class="mt-10 mx-2 md:mx-10 block md:hidden">
+    <button class="px-10 py-3 w-full bg-black text-white border rounded-lg">Send Message</button>
+  </div>
 
-    <footer class="mt-20 mx-4 md:mx-10 lg:mx-20  rounded-lg px-4 py-6 bg-[#191a23] text-white">
-      <div class="flex flex-col lg:flex-row gap-9 justify-around items-center">
-        <div class="flex items-center gap-0 xl:gap-4"><img class="h-6" src="./assets/Icon.png" alt=""><span class="ml-4 text-2xl font-bold">Positivus</span></div>
-        <div class="flex flex-col lg:flex-row gap-3 lg:gap-10">
-          <a href="#">About us</a>
-          <a href="#">Services</a>
-          <a href="#">Use Cases</a>
-          <a href="#">Pricing</a>
-          <a href="#">Blog</a>
-        </div>
-        <div class="text-2xl hidden lg:flex gap-7">
-          <i class="fa-brands fa-linkedin" class=""></i>
-          <i class="fa-brands fa-facebook"></i>
-          <i class="fa-brands fa-twitter"></i>
-        </div>
+  <footer class="mt-20 mx-4 md:mx-10 lg:mx-20 rounded-lg px-4 py-6 bg-[#191a23] text-white">
+    <div class="flex flex-col lg:flex-row gap-9 justify-around items-center">
+      <div class="flex items-center gap-0 xl:gap-4"><img class="h-6" src="./assets/Icon.png" alt=""><span class="ml-4 text-2xl font-bold">Positivus</span></div>
+      <div class="flex flex-col lg:flex-row gap-3 lg:gap-10">
+        <a href="#">About us</a>
+        <a href="#">Services</a>
+        <a href="#">Use Cases</a>
+        <a href="#">Pricing</a>
+        <a href="#">Blog</a>
       </div>
-
-
-      <div class="flex flex-col lg:flex-row gap-5 lg:gap-0 justify-normal lg:justify-around mt-6">
-        <div class="flex flex-col space-y-4 text-center lg:text-start">
-          <button class="px-1 bg-[#b9ff66]  w-max mx-auto lg:ml-0 rounded-md text-black">Contact us:</button>
-          <p>Email:<a href="#">info@positivus.com</a></p>
-          <p>Phone: <a href="#">555-567-8901</a></p>
-          <p>Address: 1234 Main St <br>
-            Moonstone City, Stardust State 12345</p>
-        </div>
-        <div class="bg-[#292a32] border-black rounded-lg px-8 py-12">
-          <label class="flex flex-col  lg:flex-row gap-4">
-            <input type="email" placeholder="Email" class="border rounded-md border-white px-4 py-2">
-            <button class="px-4 py-2 bg-[#b9ff66] w-auto
-             text-black border rounded-md">Subscribe to news</button>
-          </label>
-        </div>
-      </div>
-
-      <div class="text-2xl flex justify-center lg:hidden gap-16 mt-10">
-        <i class="fa-brands fa-linkedin" class=""></i>
+      <div class="text-2xl hidden lg:flex gap-7">
+        <i class="fa-brands fa-linkedin"></i>
         <i class="fa-brands fa-facebook"></i>
         <i class="fa-brands fa-twitter"></i>
       </div>
+    </div>
 
-      <div class="h-[1px] w-[88%] my-10 mx-auto  bg-white"></div>
-
-      <div class="text-sm flex flex-col md:flex-row gap-4 md:gap-12 font-light mx-16">
-        <span >© 2023 Positivus. All Rights Reserved.</span>
-        <span class="underline ">Privacy Policy</span>
+    <div class="flex flex-col lg:flex-row gap-5 lg:gap-0 justify-normal lg:justify-around mt-6">
+      <div class="flex flex-col space-y-4 text-center lg:text-start">
+        <button class="px-1 bg-[#b9ff66] w-max mx-auto lg:ml-0 rounded-md text-black">Contact us:</button>
+        <p>Email: <a href="#">info@positivus.com</a></p>
+        <p>Phone: <a href="#">555-567-8901</a></p>
+        <p>Address: 1234 Main St <br> Moonstone City, Stardust State 12345</p>
       </div>
-    </footer>
+      <div class="bg-[#292a32] border-black rounded-lg px-8 py-12">
+        <label class="flex flex-col lg:flex-row gap-4">
+          <input type="email" placeholder="Email" class="border rounded-md border-white px-4 py-2">
+          <button class="px-4 py-2 bg-[#b9ff66] w-auto text-black border rounded-md">Subscribe to news</button>
+        </label>
+      </div>
+    </div>
+
+    <div class="text-2xl flex justify-center lg:hidden gap-16 mt-10">
+      <i class="fa-brands fa-linkedin"></i>
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-twitter"></i>
+    </div>
+
+    <div class="h-[1px] w-[88%] my-10 mx-auto bg-white"></div>
+
+    <div class="text-sm flex flex-col md:flex-row gap-4 md:gap-12 font-light mx-16">
+      <span>© 2023 Positivus. All Rights Reserved.</span>
+      <span class="underline">Privacy Policy</span>
+    </div>
+  </footer>
   <div class="h-[50vh]"></div>
 
-  <script src="./assets/script.js"></script>
+ 
+  <script>
+   
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileSidebar = document.getElementById('mobile-sidebar');
+    const closeSidebar = document.getElementById('close-sidebar');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+    function openSidebar() {
+      mobileSidebar.style.left = '0';
+      sidebarOverlay.style.opacity = '1';
+      sidebarOverlay.style.pointerEvents = 'auto';
+      document.body.style.overflow = 'hidden'; 
+    }
+
+    function closeSidebarFunc() {
+      mobileSidebar.style.left = '-100%';
+      sidebarOverlay.style.opacity = '0';
+      sidebarOverlay.style.pointerEvents = 'none';
+      document.body.style.overflow = ''; 
+    }
+
+    mobileMenuToggle.addEventListener('click', openSidebar);
+    closeSidebar.addEventListener('click', closeSidebarFunc);
+    sidebarOverlay.addEventListener('click', closeSidebarFunc);
+
+   
+    mobileSidebar.querySelectorAll('a, button').forEach(item => {
+      item.addEventListener('click', closeSidebarFunc);
+    });
+
+    const accordions = document.querySelectorAll('.accordion');
+
+    accordions.forEach(accordion => {
+      accordion.addEventListener('click', function () {
+        const targetId = this.getAttribute('data-target');
+        const targetPanel = document.getElementById(targetId);
+        const isOpen = targetPanel.style.maxHeight && targetPanel.style.maxHeight !== '0px';
+
+        document.querySelectorAll('.panel').forEach(panel => {
+          panel.style.maxHeight = '0';
+        });
+
+        
+        accordions.forEach(acc => acc.classList.remove('active'));
+
+
+        if (!isOpen) {
+          targetPanel.style.maxHeight = targetPanel.scrollHeight + 'px';
+          this.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
