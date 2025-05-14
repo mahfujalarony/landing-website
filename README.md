@@ -4,7 +4,7 @@
 
 ---
 
-##  Live Preview : [Live Preview on Vercel](https://tailwind-pm2v2rorw-mahfuj-alam-ronys-projects.vercel.app)
+##  Live Preview : [Live Preview on Vercel](https://landing99.netlify.app/)
 
 ---
 
